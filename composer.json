@@ -1,0 +1,30 @@
+{
+  "name": "the-under-scorer/wpk-core-graphql",
+  "description": "Graphql extension for wpk-core",
+  "version": "0.1",
+  "authors": [
+    {
+      "name": "Przemysław Żydek",
+      "email": "przemyslawzydek@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "the-under-scorer/wpk-core": "^1.5.1",
+    "thecodingmachine/graphqlite": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "UnderScorer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "UnderScorer\\GraphqlServer\\Tests\\": "tests/phpunit",
+      "UnderScorer\\Core\\Tests\\": "vendor/the-under-scorer/wpk-core/tests/phpunit"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  }
+}
