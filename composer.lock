@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "198a8b8d965678df6632f1955e8138bc",
+    "content-hash": "2dd2c6def8062a3a2e84c052a25cd398",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1066,16 +1066,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.23.1",
+            "version": "2.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "767617a047e5b8b8b3b0b6023a2650847ed7df02"
+                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/767617a047e5b8b8b3b0b6023a2650847ed7df02",
-                "reference": "767617a047e5b8b8b3b0b6023a2650847ed7df02",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/934459c5ac0658bc765ad1e53512c7c77adcac29",
+                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29",
                 "shasum": ""
             },
             "require": {
@@ -1129,20 +1129,20 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-08-17T13:57:34+00:00"
+            "time": "2019-08-31T16:37:55+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "e612609022e935f3d0337c1295176505b41188c8"
+                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e612609022e935f3d0337c1295176505b41188c8",
-                "reference": "e612609022e935f3d0337c1295176505b41188c8",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/97e59c7a16464196a8b9c77c47df68e4a39a45c4",
+                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4",
                 "shasum": ""
             },
             "require": {
@@ -1180,7 +1180,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-08-12T20:17:41+00:00"
+            "time": "2019-09-01T07:51:21+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2646,16 +2646,16 @@
         },
         {
             "name": "the-under-scorer/wp-eloquent",
-            "version": "1.4.2",
+            "version": "1.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wp-eloquent.git",
-                "reference": "d4de6beb3ac694cd4a9d33b44c71df677104e0e0"
+                "reference": "930f0c069618a424b82fc5ae75298ffce4b49878"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheUnderScorer/wp-eloquent/zipball/d4de6beb3ac694cd4a9d33b44c71df677104e0e0",
-                "reference": "d4de6beb3ac694cd4a9d33b44c71df677104e0e0",
+                "url": "https://api.github.com/repos/TheUnderScorer/wp-eloquent/zipball/930f0c069618a424b82fc5ae75298ffce4b49878",
+                "reference": "930f0c069618a424b82fc5ae75298ffce4b49878",
                 "shasum": ""
             },
             "require": {
@@ -2695,20 +2695,20 @@
                 "sql",
                 "wordpress"
             ],
-            "time": "2019-08-26T13:31:45+00:00"
+            "time": "2019-08-29T08:07:22+00:00"
         },
         {
             "name": "the-under-scorer/wpk-core",
-            "version": "1.5.1",
+            "version": "1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wpk-core.git",
-                "reference": "21aabaae23105d8fae07fcc72763ea669a6ef718"
+                "reference": "9856c65ef26a8189cf2d991d8463accae83849ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/21aabaae23105d8fae07fcc72763ea669a6ef718",
-                "reference": "21aabaae23105d8fae07fcc72763ea669a6ef718",
+                "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/9856c65ef26a8189cf2d991d8463accae83849ce",
+                "reference": "9856c65ef26a8189cf2d991d8463accae83849ce",
                 "shasum": ""
             },
             "require": {
@@ -2743,7 +2743,7 @@
                     "email": "przemyslawzydek@gmail.com"
                 }
             ],
-            "time": "2019-08-27T18:26:51+00:00"
+            "time": "2019-09-02T11:38:04+00:00"
         },
         {
             "name": "thecodingmachine/class-explorer",

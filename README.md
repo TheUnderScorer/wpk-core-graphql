@@ -7,7 +7,7 @@ A plugin for [wpk-core](https://github.com/TheUnderScorer/wpk-core) framework th
 1. Installation:
 ``composer require the-under-scorer/wpk-core-graphql``
 
-2. Add graphql route in your `routes.php` file:
+-  Add graphql route in your `routes.php` file:
 
 ```php
    <?php
@@ -26,7 +26,7 @@ A plugin for [wpk-core](https://github.com/TheUnderScorer/wpk-core) framework th
        ->controller( GraphqlServer::class );
 ```
 
-3. Add `SchemaProvider` into your `providers.php` :
+-  Add `SchemaProvider` into your `providers.php` :
     ```php
     <?php
     
@@ -57,4 +57,15 @@ A plugin for [wpk-core](https://github.com/TheUnderScorer/wpk-core) framework th
     ];
 
     ```
+   
+-  Add path to library to composer.json at "autoload-dev.psr-4" (it is needed for Graphql Types and Controllers provided by this library) : 
+```json
+{
+    "autoload-dev": {
+        "psr-4": {
+          "UnderScorer\\GraphqlServer\\": "vendor/the-under-scorer/wpk-core-graphql/src/GraphqlServer"
+        }
+      }
+}
+```
 
