@@ -22,6 +22,10 @@ class GraphqlServer extends Controller
      */
     public function handle()
     {
+        if ( $this->request->getMethod() === 'OPTIONS' ) {
+            $this->response->send();
+        }
+
         define( 'IS_GRAPHQL', true );
 
         $data = $this->getVariables();
