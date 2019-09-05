@@ -25,15 +25,10 @@ final class UserControllerTest extends GraphqlTestCase
     {
         parent::setUp();
 
-        $this->user = new User( [
-            'user_login' => 'Test_User',
-            'user_email' => 'test@gmail.com',
-            'user_pass'  => wp_generate_password(),
-        ] );
+        $userID     = $this->factory()->user->create();
+        $this->user = User::query()->find( $userID );
 
-        $this->user->save();
-
-        wp_set_current_user( $this->user->ID );
+        wp_set_current_user( $userID );
     }
 
     /**

@@ -2,7 +2,10 @@
 
 namespace UnderScorer\GraphqlServer\Graphql\Types;
 
+use Illuminate\Support\Collection;
+use TheCodingMachine\GraphQLite\Annotations\FailWith;
 use TheCodingMachine\GraphQLite\Annotations\Field;
+use TheCodingMachine\GraphQLite\Annotations\Right;
 use TheCodingMachine\GraphQLite\Annotations\Type;
 use TheCodingMachine\GraphQLite\Types\ID;
 use UnderScorer\ORM\Models\User as UserModel;
@@ -83,12 +86,27 @@ class User
 
     /**
      * @Field()
+     * @Right("administrator")
+     * @FailWith(null)
+     *
+     * @return string|null
+     */
+    public function getPassword(): ?string
+    {
+        return $this->user->password;
+    }
+
+    /**
+     * @Field()
      *
      * @return Meta[]
      */
     public function getMeta(): array
     {
-        return Meta::fromArray( $this->user->meta );
+        /** @var Collection $meta */
+        $meta = $this->user->meta;
+
+        return Meta::fromCollection( $meta );
     }
 
 }

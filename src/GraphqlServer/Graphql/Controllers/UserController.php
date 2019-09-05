@@ -2,10 +2,8 @@
 
 namespace UnderScorer\GraphqlServer\Graphql\Controllers;
 
-use TheCodingMachine\GraphQLite\Annotations\FailWith;
 use TheCodingMachine\GraphQLite\Annotations\Mutation;
 use TheCodingMachine\GraphQLite\Annotations\Query;
-use TheCodingMachine\GraphQLite\Annotations\Right;
 use TheCodingMachine\GraphQLite\Types\ID;
 use Throwable;
 use UnderScorer\GraphqlServer\Base\GraphqlController;
@@ -27,7 +25,14 @@ class UserController extends GraphqlController
      */
     public function currentUser(): ?User
     {
-        return is_user_logged_in() ? new User( UserModel::current() ) : null;
+        if ( ! is_user_logged_in() ) {
+            return null;
+        }
+
+        /** @var UserModel $user */
+        $user = UserModel::query()->findOrFail( get_current_user_id() );
+
+        return new User( $user );
     }
 
     /**
@@ -35,49 +40,24 @@ class UserController extends GraphqlController
      *
      * @Mutation()
      *
-     * @param string $login
-     * @param string $email
+     * @param string      $login
+     * @param string      $email
+     * @param string|null $password
      *
      * @return User
      * @throws Throwable
      */
-    public function createUser( string $login, string $email ): User
+    public function createUser( string $login, string $email, ?string $password ): User
     {
         $user = new UserModel( [
             'user_login' => $login,
             'user_email' => $email,
-            'user_pass'  => wp_generate_password(),
+            'user_pass'  => $password ? wp_hash_password( $password ) : wp_generate_password(),
         ] );
 
         $user->saveOrFail();
 
         return new User( $user );
-    }
-
-    /**
-     * Updates given user
-     *
-     * @Mutation()
-     * @Right("administrator")
-     * @FailWith(null)
-     *
-     * @param ID     $ID
-     * @param string $login
-     *
-     * @return User | null
-     * @throws Throwable
-     */
-    public function updateUser( ID $ID, string $login ): ?User
-    {
-        /**
-         * @var UserModel $modifiedUser
-         */
-        $modifiedUser = UserModel::query()->find( (int) $ID->val() );
-
-        $modifiedUser->user_login = $login;
-        $modifiedUser->saveOrFail();
-
-        return new User( $modifiedUser );
     }
 
     /**
