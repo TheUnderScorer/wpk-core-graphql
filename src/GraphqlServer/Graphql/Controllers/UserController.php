@@ -3,7 +3,6 @@
 namespace UnderScorer\GraphqlServer\Graphql\Controllers;
 
 use TheCodingMachine\GraphQLite\Annotations\FailWith;
-use TheCodingMachine\GraphQLite\Annotations\Logged;
 use TheCodingMachine\GraphQLite\Annotations\Mutation;
 use TheCodingMachine\GraphQLite\Annotations\Query;
 use TheCodingMachine\GraphQLite\Annotations\Right;
@@ -85,8 +84,6 @@ class UserController extends GraphqlController
      * Fetches user by his ID
      *
      * @Query()
-     * @Logged()
-     * @FailWith(null)
      *
      * @param ID $ID
      *

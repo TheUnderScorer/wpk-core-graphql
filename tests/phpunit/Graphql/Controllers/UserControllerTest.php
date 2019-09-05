@@ -43,7 +43,7 @@ final class UserControllerTest extends GraphqlTestCase
     {
         $query = <<<EOL
             {
-                currentUser{
+                currentUser {
                     id,
                     login,
                     email,
@@ -58,12 +58,12 @@ final class UserControllerTest extends GraphqlTestCase
         $data = $result[ 'data' ][ 'currentUser' ];
 
         $this->assertEquals(
-            $this->user->user_login,
+            $this->user->login,
             $data[ 'login' ]
         );
 
         $this->assertEquals(
-            $this->user->user_email,
+            $this->user->email,
             $data[ 'email' ]
         );
 

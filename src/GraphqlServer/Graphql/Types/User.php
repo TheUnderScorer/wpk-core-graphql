@@ -8,8 +8,6 @@ use TheCodingMachine\GraphQLite\Types\ID;
 use UnderScorer\ORM\Models\User as UserModel;
 
 /**
- * Proxy for user model
- *
  * @Type()
  *
  * Class User
@@ -81,6 +79,16 @@ class User
     public function getLastName(): ?string
     {
         return $this->user->lastName;
+    }
+
+    /**
+     * @Field()
+     *
+     * @return Meta[]
+     */
+    public function getMeta(): array
+    {
+        return Meta::fromArray( $this->user->meta );
     }
 
 }

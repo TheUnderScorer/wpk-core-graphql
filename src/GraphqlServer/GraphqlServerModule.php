@@ -3,6 +3,7 @@
 namespace UnderScorer\GraphqlServer;
 
 use UnderScorer\GraphqlServer\Base\GraphqlModule;
+use UnderScorer\GraphqlServer\Graphql\Controllers\PostController;
 use UnderScorer\GraphqlServer\Graphql\Controllers\UserController;
 use UnderScorer\GraphqlServer\Hooks\Controllers\Server\ServerHandler;
 
@@ -20,6 +21,7 @@ class GraphqlServerModule extends GraphqlModule
      */
     protected $graphqlControllers = [
         UserController::class,
+        PostController::class,
     ];
 
     /**
