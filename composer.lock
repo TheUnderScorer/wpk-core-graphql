@@ -2699,16 +2699,16 @@
         },
         {
             "name": "the-under-scorer/wpk-core",
-            "version": "1.5.4",
+          "version": "1.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wpk-core.git",
-                "reference": "9856c65ef26a8189cf2d991d8463accae83849ce"
+              "reference": "23f963cd15d79fee51d72727fb779da2bf371ef3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/9856c65ef26a8189cf2d991d8463accae83849ce",
-                "reference": "9856c65ef26a8189cf2d991d8463accae83849ce",
+              "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/23f963cd15d79fee51d72727fb779da2bf371ef3",
+              "reference": "23f963cd15d79fee51d72727fb779da2bf371ef3",
                 "shasum": ""
             },
             "require": {
@@ -2743,7 +2743,7 @@
                     "email": "przemyslawzydek@gmail.com"
                 }
             ],
-            "time": "2019-09-02T11:38:04+00:00"
+          "time": "2019-09-05T14:46:22+00:00"
         },
         {
             "name": "thecodingmachine/class-explorer",
@@ -2806,16 +2806,16 @@
         },
         {
             "name": "thecodingmachine/graphqlite",
-            "version": "v3.0.0",
+          "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/graphqlite.git",
-                "reference": "1fa00232c73c6a4d881b6f88df119f1917255dd1"
+              "reference": "8711488872b76508a216499ebe40cefc26e428db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/graphqlite/zipball/1fa00232c73c6a4d881b6f88df119f1917255dd1",
-                "reference": "1fa00232c73c6a4d881b6f88df119f1917255dd1",
+              "url": "https://api.github.com/repos/thecodingmachine/graphqlite/zipball/8711488872b76508a216499ebe40cefc26e428db",
+              "reference": "8711488872b76508a216499ebe40cefc26e428db",
                 "shasum": ""
             },
             "require": {
@@ -2865,7 +2865,7 @@
                 }
             ],
             "description": "Write your GraphQL queries in simple to write controllers (using webonyx/graphql-php).",
-            "time": "2019-04-23T15:27:27+00:00"
+          "time": "2019-09-05T13:36:29+00:00"
         },
         {
             "name": "typerocket/core",

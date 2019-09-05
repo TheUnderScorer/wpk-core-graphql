@@ -2,11 +2,15 @@
 
 namespace UnderScorer\GraphqlServer\Graphql\Controllers;
 
+use Exception;
+use TheCodingMachine\GraphQLite\Annotations\Mutation;
 use TheCodingMachine\GraphQLite\Annotations\Query;
 use TheCodingMachine\GraphQLite\Types\ID;
+use UnderScorer\Core\Exceptions\RequestException;
 use UnderScorer\GraphqlServer\Base\GraphqlController;
 use UnderScorer\GraphqlServer\Graphql\Types\Post;
 use UnderScorer\ORM\Models\Post as PostModel;
+use UnderScorer\ORM\Models\User;
 
 /**
  *
@@ -31,6 +35,38 @@ class PostController extends GraphqlController
         $foundPost = PostModel::query()->findOrFail( $ID->val() );
 
         return new Post( $foundPost );
+    }
+
+
+    /**
+     * Removes selected post
+     *
+     * @Mutation()
+     *
+     * @param ID $ID
+     *
+     * @return Post
+     * @throws RequestException
+     * @throws Exception
+     */
+    public function deletePost( ID $ID ): Post
+    {
+        $currentUser = User::current();
+
+        /** @var PostModel $postToDelete */
+        $postToDelete = PostModel::query()->findOrFail( $ID->val() );
+
+        if ( ! $currentUser ||
+             ( $currentUser->ID !== (int) $postToDelete->authorID && ! current_user_can( 'administrator' ) ) ||
+             ! apply_filters( 'wpk.graphql.canDeletePost', $postToDelete )
+        ) {
+            throw new RequestException( 'You cannot delete this post.' );
+        }
+
+        $result = new Post( $postToDelete );
+        $postToDelete->delete();
+
+        return $result;
     }
 
 }

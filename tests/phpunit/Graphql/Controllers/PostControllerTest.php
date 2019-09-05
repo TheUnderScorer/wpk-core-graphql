@@ -3,6 +3,7 @@
 namespace UnderScorer\GraphqlServer\Tests\Graphql\Controllers;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use UnderScorer\GraphqlServer\Tests\GraphqlTestCase;
 use UnderScorer\ORM\Models\Post;
 
@@ -27,6 +28,7 @@ final class PostControllerTest extends GraphqlTestCase
 
         $postID = $this->factory()->post->create();
         $userID = $this->factory()->user->create();
+        wp_set_current_user( $userID );
 
         $this->post           = Post::query()->find( $postID );
         $this->post->authorID = $userID;
@@ -95,6 +97,29 @@ final class PostControllerTest extends GraphqlTestCase
     protected function checkField( string $key, array $data ): void
     {
         $this->assertEquals( $this->post->$key, $data[ $key ] );
+    }
+
+    public function testDeletePost(): void
+    {
+        $query = <<<EOL
+            mutation DeletePost(\$ID: ID!) {
+                deletePost(ID: \$ID) {
+                    id
+                }
+            }
+        EOL;
+
+        $result = $this->handleQuery( $query, [
+            'ID' => $this->post->ID,
+        ] );
+
+        $data = $result[ 'data' ][ 'deletePost' ];
+
+        $this->assertEquals( $this->post->ID, $data[ 'id' ] );
+
+        $this->setExpectedException( ModelNotFoundException::class );
+
+        $this->post->refresh();
     }
 
 }

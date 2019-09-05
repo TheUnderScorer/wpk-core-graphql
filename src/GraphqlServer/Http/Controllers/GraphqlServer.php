@@ -2,9 +2,11 @@
 
 namespace UnderScorer\GraphqlServer\Http\Controllers;
 
+use GraphQL\Error\Error;
 use GraphQL\GraphQL;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use TheCodingMachine\GraphQLite\SchemaFactory;
+use UnderScorer\Core\Exceptions\RequestException;
 use UnderScorer\Core\Http\Controller;
 
 /**
@@ -51,6 +53,8 @@ class GraphqlServer extends Controller
         $schemaFactory = $this->app->make( SchemaFactory::class );
 
         $result = GraphQL::executeQuery( $schemaFactory->createSchema(), $query, null, null, $variables );
+        $result->setErrorsHandler( [ $this, 'errorHandler' ] );
+
         $output = $result->toArray();
 
         $this->response->setContent( $output )->json();
@@ -71,5 +75,28 @@ class GraphqlServer extends Controller
         $input = json_decode( file_get_contents( 'php://input' ), true );
 
         return empty( $input ) ? [] : $input;
+    }
+
+    /**
+     * @param Error[] $errors
+     *
+     * @return array
+     */
+    public function errorHandler( array $errors ): array
+    {
+        return array_map( function ( Error $error ) {
+            $exception = $error->getPrevious();
+
+            $result = [
+                'message' => $error->getMessage(),
+                'code'    => 'GRAPHQL_ERROR',
+            ];
+
+            if ( $exception instanceof RequestException ) {
+                $result[ 'code' ] = $exception->getErrorCode();
+            }
+
+            return $result;
+        }, $errors );
     }
 }
