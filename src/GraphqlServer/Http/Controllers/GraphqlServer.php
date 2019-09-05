@@ -28,7 +28,9 @@ class GraphqlServer extends Controller
             $this->response->send();
         }
 
-        define( 'IS_GRAPHQL', true );
+        if ( ! defined( 'IS_GRAPHQL' ) ) {
+            define( 'IS_GRAPHQL', true );
+        }
 
         $data = $this->getVariables();
 
