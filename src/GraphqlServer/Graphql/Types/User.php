@@ -21,7 +21,7 @@ class User
     /**
      * @var UserModel
      */
-    private $user;
+    protected $user;
 
     /**
      * User constructor.
@@ -50,7 +50,7 @@ class User
      */
     public function getLogin(): ?string
     {
-        return $this->user->user_login;
+        return $this->user->login;
     }
 
     /**
@@ -60,7 +60,7 @@ class User
      */
     public function getEmail(): ?string
     {
-        return $this->user->user_email;
+        return $this->user->email;
     }
 
     /**
@@ -70,7 +70,7 @@ class User
      */
     public function getFirstName(): ?string
     {
-        return $this->user->first_name;
+        return $this->user->firstName;
     }
 
     /**
@@ -80,7 +80,7 @@ class User
      */
     public function getLastName(): ?string
     {
-        return $this->user->last_name;
+        return $this->user->lastName;
     }
 
 }
