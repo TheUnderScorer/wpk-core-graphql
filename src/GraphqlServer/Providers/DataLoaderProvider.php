@@ -27,8 +27,8 @@ class DataLoaderProvider extends ServiceProvider
      */
     protected function postLoader(): self
     {
-        $postBatchFunction = function ( $keys ) {
-            return Post::query()->findMany( $keys )->all();
+        $postBatchFunction = function ( $keys, $model = Post::class ) {
+            return $model::query()->findMany( $keys )->all();
         };
 
         $postLoader = new DataLoader( $postBatchFunction );
@@ -45,8 +45,8 @@ class DataLoaderProvider extends ServiceProvider
      */
     protected function userLoader(): self
     {
-        $usersBatchFunction = function ( $keys ) {
-            return User::query()->findMany( $keys )->all();
+        $usersBatchFunction = function ( $keys, $model = User::class ) {
+            return $model::query()->findMany( $keys )->all();
         };
 
         $userLoader = new DataLoader( $usersBatchFunction );

@@ -2,22 +2,24 @@
 
 namespace UnderScorer\GraphqlServer\Tests\Providers;
 
-use AndrewDalpino\DataLoader\BatchingDataLoader;
 use UnderScorer\Core\Tests\TestCase;
+use UnderScorer\GraphqlServer\Data\DataLoader;
+use UnderScorer\ORM\Models\User;
 
-class DataLoaderProviderTest extends TestCase
+final class DataLoaderProviderTest extends TestCase
 {
 
     public function testUserDataLoader(): void
     {
         $userID = $this->factory()->user->create();
 
-        /** @var BatchingDataLoader $loader */
+        /** @var DataLoader $loader */
         $loader = self::$app->make( 'UserDataLoader' );
 
         $loadedUser = $loader->load( $userID );
 
-        return;
+        $this->assertInstanceOf( User::class, $loadedUser );
+        $this->assertEquals( $userID, $loadedUser->ID );
     }
 
 }

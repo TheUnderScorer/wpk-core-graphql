@@ -37,16 +37,19 @@ class DataLoader implements DataLoaderInterface
      * Loads value by given key
      *
      * @param string|int $key
+     * @param mixed      $functionArgs
      *
      * @return mixed
      */
-    public function load( $key )
+    public function load( $key, ...$functionArgs )
     {
         if ( isset( $this->data[ $key ] ) ) {
             return $this->data[ $key ];
         }
 
-        $value = call_user_func( $this->loadFunction, [ $key ] );
+        $args = array_merge( [ [ $key ] ], $functionArgs );
+
+        $value = call_user_func_array( $this->loadFunction, $args );
 
         if ( is_array( $value ) ) {
             $value = array_shift( $value );
@@ -80,12 +83,15 @@ class DataLoader implements DataLoaderInterface
      * Loads many values by given array of keys
      *
      * @param array $keys
+     * @param mixed $funcArgs
      *
      * @return mixed
      */
-    public function loadMany( array $keys )
+    public function loadMany( array $keys, ...$funcArgs )
     {
-        $values = call_user_func( $this->loadFunction, $keys );
+        $args = array_merge( [ $keys ], $funcArgs );
+
+        $values = call_user_func_array( $this->loadFunction, $args );
 
         foreach ( $keys as $index => $key ) {
             $this->prime(

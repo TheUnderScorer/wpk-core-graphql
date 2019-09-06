@@ -68,7 +68,7 @@ final class DataLoaderTest extends TestCase
      */
     public function testLoadMany(): void
     {
-        $results = $this->loader->loadMany( [ 1, 2 ] );
+        $results = $this->loader->loadMany( [ 1, 2 ], true, true );
 
         $this->assertEquals( [
             [
