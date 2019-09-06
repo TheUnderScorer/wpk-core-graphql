@@ -37,7 +37,7 @@ class UserController extends GraphqlController
         /**
          * @var DataLoader $loader
          */
-        $loader = $this->app->make( 'UserDataLoader' );
+        $loader = $this->app->make( 'UsersDataLoader' );
 
         /** @var UserModel $user */
         $user = $loader->load( get_current_user_id() );
@@ -62,7 +62,7 @@ class UserController extends GraphqlController
         /**
          * @var DataLoader $loader
          */
-        $loader = $this->app->make( 'UserDataLoader' );
+        $loader = $this->app->make( 'UsersDataLoader' );
 
         $user = new UserModel( [
             'user_login' => $login,
@@ -94,7 +94,7 @@ class UserController extends GraphqlController
         /**
          * @var DataLoader $loader
          */
-        $loader = $this->app->make( 'UserDataLoader' );
+        $loader = $this->app->make( 'UsersDataLoader' );
 
         /**
          * @var UserModel $user

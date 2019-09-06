@@ -33,7 +33,7 @@ class DataLoaderProvider extends ServiceProvider
 
         $postLoader = new DataLoader( $postBatchFunction );
 
-        $this->app->singleton( 'PostDataLoader', function () use ( $postLoader ) {
+        $this->app->singleton( 'PostsDataLoader', function () use ( $postLoader ) {
             return $postLoader;
         } );
 
@@ -51,7 +51,7 @@ class DataLoaderProvider extends ServiceProvider
 
         $userLoader = new DataLoader( $usersBatchFunction );
 
-        $this->app->singleton( 'UserDataLoader', function () use ( $userLoader ) {
+        $this->app->singleton( 'UsersDataLoader', function () use ( $userLoader ) {
             return $userLoader;
         } );
 
