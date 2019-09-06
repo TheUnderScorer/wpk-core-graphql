@@ -5,6 +5,7 @@ use UnderScorer\Core\App;
 use UnderScorer\Core\Settings;
 use UnderScorer\Core\Tests\TestCase;
 
+define( 'SAVEQUERIES', true );
 define( 'TESTS_DIR', __DIR__ );
 define( 'DATA_DIR', TESTS_DIR . '/data' );
 
@@ -48,7 +49,7 @@ require $testsDir . '/includes/bootstrap.php';
 $app = new App(
     'graphql-test',
     __FILE__,
-    new Settings('graphql-test'),
+    new Settings( 'graphql-test' ),
 );
 
 TestCase::setApp( $app );

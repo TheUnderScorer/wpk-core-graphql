@@ -53,8 +53,9 @@ class GraphqlServer extends Controller
         }
 
         $schemaFactory = $this->app->make( SchemaFactory::class );
+        $schema        = $schemaFactory->createSchema();
 
-        $result = GraphQL::executeQuery( $schemaFactory->createSchema(), $query, null, null, $variables );
+        $result = GraphQL::executeQuery( $schema, $query, null, null, $variables );
         $result->setErrorsHandler( [ $this, 'errorHandler' ] );
 
         $output = $result->toArray();

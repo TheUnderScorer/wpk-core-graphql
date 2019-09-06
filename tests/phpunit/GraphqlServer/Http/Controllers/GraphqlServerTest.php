@@ -7,14 +7,14 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 use UnderScorer\Core\Exceptions\RequestException;
 use UnderScorer\Core\Http\Request;
 use UnderScorer\Core\Tests\Mock\Http\MockResponse;
-use UnderScorer\Core\Tests\TestCase;
 use UnderScorer\GraphqlServer\Http\Controllers\GraphqlServer;
+use UnderScorer\GraphqlServer\Tests\GraphqlTestCase;
 
 /**
  * Class GraphqlServerTest
  * @package UnderScorer\GraphqlServer\Tests\Http\Controllers
  */
-final class GraphqlServerTest extends TestCase
+final class GraphqlServerTest extends GraphqlTestCase
 {
     /**
      * @throws BindingResolutionException
@@ -38,6 +38,34 @@ final class GraphqlServerTest extends TestCase
             'No query provided.',
             $result[ 'errors' ][ 0 ][ 'message' ]
         );
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    public function testBatchQuery(): void
+    {
+        $userID = $this->login( 'administrator' );
+
+        $query = <<<EOL
+            {
+                currentUser {
+                    id,
+                    login,
+                    email,
+                    firstName,
+                    lastName
+                }
+                user(ID: $userID) {
+                    id,
+                }
+            }
+        EOL;
+
+        $result = $this->handleQuery( $query );
+
+        $this->assertNotEmpty( $result[ 'data' ][ 'currentUser' ] );
+        $this->assertNotEmpty( $result[ 'data' ][ 'user' ] );
     }
 
     /**

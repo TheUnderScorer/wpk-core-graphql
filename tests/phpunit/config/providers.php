@@ -10,12 +10,14 @@ use UnderScorer\Core\Providers\RouterProvider;
 use UnderScorer\Core\Providers\SerializerProvider;
 use UnderScorer\Core\Providers\ValidationProvider;
 use UnderScorer\Core\Providers\ViewProvider;
+use UnderScorer\GraphqlServer\Providers\DataLoaderProvider;
 use UnderScorer\GraphqlServer\Providers\SchemaProvider;
 
 return [
     CacheProvider::class,
     RouterProvider::class,
     SchemaProvider::class,
+    DataLoaderProvider::class,
     SerializerProvider::class,
     FileSystemProvider::class,
     EnqueueProvider::class,
