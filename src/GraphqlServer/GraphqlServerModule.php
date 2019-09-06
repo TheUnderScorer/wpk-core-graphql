@@ -2,6 +2,7 @@
 
 namespace UnderScorer\GraphqlServer;
 
+use UnderScorer\Core\Contracts\AppInterface;
 use UnderScorer\GraphqlServer\Base\GraphqlModule;
 use UnderScorer\GraphqlServer\Graphql\Controllers\PostController;
 use UnderScorer\GraphqlServer\Graphql\Controllers\UserController;
@@ -17,12 +18,20 @@ class GraphqlServerModule extends GraphqlModule
 {
 
     /**
-     * @var array
+     * GraphqlServerModule constructor.
+     *
+     * @param string       $ID
+     * @param AppInterface $app
      */
-    protected $graphqlControllers = [
-        UserController::class,
-        PostController::class,
-    ];
+    public function __construct( string $ID, AppInterface $app )
+    {
+        $this->graphqlControllers = apply_filters( 'wpk.graphql.baseControllers', [
+            UserController::class,
+            PostController::class,
+        ] );
+
+        parent::__construct( $ID, $app );
+    }
 
     /**
      * @return string
