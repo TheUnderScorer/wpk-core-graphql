@@ -22,7 +22,7 @@ final class DataLoaderProviderTest extends TestCase
         $userID = $this->factory()->user->create();
 
         /** @var DataLoader $loader */
-        $loader = self::$app->make( 'UserDataLoader' );
+        $loader = self::$app->make( 'UsersDataLoader' );
 
         $loadedUser = $loader->load( $userID );
 
