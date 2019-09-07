@@ -26,7 +26,7 @@ A plugin for [wpk-core](https://github.com/TheUnderScorer/wpk-core) framework th
        ->controller( GraphqlServer::class );
 ```
 
--  Add `SchemaProvider` into your `providers.php` :
+-  Add `SchemaProvider` and `DataLoaderProvider` into your `providers.php` :
     ```php
     <?php
     
@@ -41,11 +41,13 @@ A plugin for [wpk-core](https://github.com/TheUnderScorer/wpk-core) framework th
     use UnderScorer\Core\Providers\ValidationProvider;
     use UnderScorer\Core\Providers\ViewProvider;
     use UnderScorer\GraphqlServer\Providers\SchemaProvider;
+    use UnderScorer\GraphqlServer\Providers\DataLoaderProvider;
     
     return [
         CacheProvider::class,
         RouterProvider::class,
-        SchemaProvider::class, // Graphql Schema Provider
+        SchemaProvider::class, // Graphql Schema Provider,
+        DataLoaderProvider::class, // DataLoader Provider
         SerializerProvider::class,
         FileSystemProvider::class,
         EnqueueProvider::class,
