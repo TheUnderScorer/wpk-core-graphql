@@ -6,11 +6,8 @@ use UnderScorer\Core\Contracts\AppInterface;
 use UnderScorer\GraphqlServer\Base\GraphqlModule;
 use UnderScorer\GraphqlServer\Graphql\Controllers\PostController;
 use UnderScorer\GraphqlServer\Graphql\Controllers\UserController;
-use UnderScorer\GraphqlServer\Hooks\Controllers\Server\ServerHandler;
 
 /**
- *
- *
  * Class GraphqlModule
  * @package UnderScorer\Graphql
  */

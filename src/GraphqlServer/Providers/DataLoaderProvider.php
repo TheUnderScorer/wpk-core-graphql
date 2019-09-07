@@ -31,10 +31,8 @@ class DataLoaderProvider extends ServiceProvider
             return $model::query()->findMany( $keys )->all();
         };
 
-        $postLoader = new DataLoader( $postBatchFunction );
-
-        $this->app->singleton( 'PostsDataLoader', function () use ( $postLoader ) {
-            return $postLoader;
+        $this->app->singleton( 'PostsDataLoader', function () use ( $postBatchFunction ) {
+            return new DataLoader( $postBatchFunction );
         } );
 
         return $this;
@@ -49,10 +47,8 @@ class DataLoaderProvider extends ServiceProvider
             return $model::query()->findMany( $keys )->all();
         };
 
-        $userLoader = new DataLoader( $usersBatchFunction );
-
-        $this->app->singleton( 'UsersDataLoader', function () use ( $userLoader ) {
-            return $userLoader;
+        $this->app->singleton( 'UsersDataLoader', function () use ( $usersBatchFunction ) {
+            return new DataLoader( $usersBatchFunction );
         } );
 
         return $this;

@@ -43,7 +43,6 @@ class PostController extends GraphqlController
         return new Post( $foundPost );
     }
 
-
     /**
      * Removes selected post
      *
