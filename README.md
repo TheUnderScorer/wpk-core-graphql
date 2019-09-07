@@ -60,10 +60,10 @@ A plugin for [wpk-core](https://github.com/TheUnderScorer/wpk-core) framework th
 
     ```
    
--  Add path to library to composer.json at "autoload-dev.psr-4" (it is needed for Graphql Types and Controllers provided by this library) : 
+-  Add path to library to composer.json at "autoload.psr-4" (it is needed for Graphql Types and Controllers provided by this library) : 
 ```json
 {
-    "autoload-dev": {
+    "autoload": {
         "psr-4": {
           "UnderScorer\\GraphqlServer\\": "vendor/the-under-scorer/wpk-core-graphql/src/GraphqlServer"
         }
