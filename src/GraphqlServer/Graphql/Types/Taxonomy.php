@@ -2,6 +2,7 @@
 
 namespace UnderScorer\GraphqlServer\Graphql\Types;
 
+use Illuminate\Support\Collection;
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Type;
 use TheCodingMachine\GraphQLite\Types\ID;
@@ -79,6 +80,17 @@ class Taxonomy extends BaseType
     public function getCount(): int
     {
         return $this->taxonomy->count;
+    }
+
+    /**
+     * @return Post[]
+     */
+    public function getPosts(): array
+    {
+        /** @var Collection $posts */
+        $posts = $this->taxonomy->posts;
+
+        return Post::fromCollection( $posts );
     }
 
 }
