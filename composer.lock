@@ -4,56 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-  "content-hash": "91d2c45f0bb0f5fbf841089f7f22a42b",
+  "content-hash": "ae3a8d0198b56cc2f1c20c90eda5a820",
     "packages": [
         {
-          "name": "andrewdalpino/dataloader-php",
-          "version": "v1.0.3",
-          "source": {
-            "type": "git",
-            "url": "https://github.com/andrewdalpino/DataLoader-PHP.git",
-            "reference": "62ecdfe4de6f0ab1f2e5b5053b30d53c660edb42"
-          },
-          "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/andrewdalpino/DataLoader-PHP/zipball/62ecdfe4de6f0ab1f2e5b5053b30d53c660edb42",
-            "reference": "62ecdfe4de6f0ab1f2e5b5053b30d53c660edb42",
-            "shasum": ""
-          },
-          "require": {
-            "php": ">=7.1.3"
-          },
-          "require-dev": {
-            "phpunit/phpunit": "6.0.*"
-          },
-          "type": "library",
-          "autoload": {
-            "psr-4": {
-              "AndrewDalpino\\DataLoader\\": "src/"
-            }
-          },
-          "notification-url": "https://packagist.org/downloads/",
-          "license": [
-            "MIT"
-          ],
-          "authors": [
-            {
-              "name": "Andrew DalPino",
-              "email": "me@andrewdalpino.com"
-            }
-          ],
-          "description": "A speed layer that enables batch loading, de-duplication, and caching for efficient data fetching over any storage backend.",
-          "keywords": [
-            "dataLoader",
-            "database",
-            "deduplication",
-            "graphql",
-            "memoization",
-            "php"
-          ],
-          "time": "2018-02-28T04:30:18+00:00"
-        },
-      {
             "name": "doctrine/annotations",
             "version": "v1.7.0",
             "source": {
@@ -2693,16 +2646,16 @@
         },
         {
             "name": "the-under-scorer/wp-eloquent",
-            "version": "1.4.4",
+          "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wp-eloquent.git",
-                "reference": "930f0c069618a424b82fc5ae75298ffce4b49878"
+              "reference": "a590256903bea5c98dcad81a9c1c1711cb13bada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheUnderScorer/wp-eloquent/zipball/930f0c069618a424b82fc5ae75298ffce4b49878",
-                "reference": "930f0c069618a424b82fc5ae75298ffce4b49878",
+              "url": "https://api.github.com/repos/TheUnderScorer/wp-eloquent/zipball/a590256903bea5c98dcad81a9c1c1711cb13bada",
+              "reference": "a590256903bea5c98dcad81a9c1c1711cb13bada",
                 "shasum": ""
             },
             "require": {
@@ -2710,7 +2663,7 @@
                 "illuminate/pagination": "^5.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "7.5.9",
+              "phpunit/phpunit": "^7",
                 "vlucas/phpdotenv": "^3.3"
             },
             "type": "library",
@@ -2742,20 +2695,20 @@
                 "sql",
                 "wordpress"
             ],
-            "time": "2019-08-29T08:07:22+00:00"
+          "time": "2019-09-09T07:59:13+00:00"
         },
         {
             "name": "the-under-scorer/wpk-core",
-          "version": "1.5.5",
+          "version": "1.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wpk-core.git",
-              "reference": "23f963cd15d79fee51d72727fb779da2bf371ef3"
+              "reference": "362e062bb2f180a31e3e07c0ba7c01496fde53ef"
             },
             "dist": {
                 "type": "zip",
-              "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/23f963cd15d79fee51d72727fb779da2bf371ef3",
-              "reference": "23f963cd15d79fee51d72727fb779da2bf371ef3",
+              "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/362e062bb2f180a31e3e07c0ba7c01496fde53ef",
+              "reference": "362e062bb2f180a31e3e07c0ba7c01496fde53ef",
                 "shasum": ""
             },
             "require": {
@@ -2790,7 +2743,7 @@
                     "email": "przemyslawzydek@gmail.com"
                 }
             ],
-          "time": "2019-09-05T14:46:22+00:00"
+          "time": "2019-09-07T14:35:42+00:00"
         },
         {
             "name": "thecodingmachine/class-explorer",
@@ -3490,61 +3443,6 @@
             "time": "2019-08-09T12:45:53+00:00"
         },
         {
-          "name": "overblog/dataloader-php",
-          "version": "v0.5.3",
-          "source": {
-            "type": "git",
-            "url": "https://github.com/overblog/dataloader-php.git",
-            "reference": "cf9ed60df7a14ceb60ee998f226400435d076f15"
-          },
-          "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/overblog/dataloader-php/zipball/cf9ed60df7a14ceb60ee998f226400435d076f15",
-            "reference": "cf9ed60df7a14ceb60ee998f226400435d076f15",
-            "shasum": ""
-          },
-          "require": {
-            "php": "^5.5|^7.0"
-          },
-          "replace": {
-            "overblog/promise-adapter": "self.version"
-          },
-          "require-dev": {
-            "guzzlehttp/promises": "^1.3.0",
-            "phpunit/phpunit": "^4.1|^5.1",
-            "react/promise": "^2.5.0",
-            "webonyx/graphql-php": "^0.11.0"
-          },
-          "suggest": {
-            "guzzlehttp/promises": "To use with Guzzle promise",
-            "react/promise": "To use with ReactPhp promise",
-            "webonyx/graphql-php": "To use with Webonyx GraphQL native promise"
-          },
-          "type": "library",
-          "extra": {
-            "branch-alias": {
-              "dev-master": "0.5-dev"
-            }
-          },
-          "autoload": {
-            "psr-4": {
-              "Overblog\\DataLoader\\": "src/",
-              "Overblog\\PromiseAdapter\\": "lib/promise-adapter/src/"
-            }
-          },
-          "notification-url": "https://packagist.org/downloads/",
-          "license": [
-            "MIT"
-          ],
-          "description": "DataLoaderPhp is a generic utility to be used as part of your application's data fetching layer to provide a simplified and consistent API over various remote data sources such as databases or web services via batching and caching.",
-          "keywords": [
-            "Batching",
-            "caching",
-            "dataLoader"
-          ],
-          "time": "2018-12-15T17:19:30+00:00"
-        },
-      {
             "name": "phar-io/manifest",
             "version": "1.0.3",
             "source": {

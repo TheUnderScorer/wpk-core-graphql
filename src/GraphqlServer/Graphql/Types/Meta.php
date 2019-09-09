@@ -2,7 +2,6 @@
 
 namespace UnderScorer\GraphqlServer\Graphql\Types;
 
-use Illuminate\Support\Collection;
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Type;
 use UnderScorer\ORM\Contracts\MetaInterface;
@@ -13,7 +12,7 @@ use UnderScorer\ORM\Contracts\MetaInterface;
  * Class Meta
  * @package UnderScorer\GraphqlServer\Graphql\Types
  */
-class Meta
+class Meta extends BaseType
 {
 
     /**
@@ -29,18 +28,6 @@ class Meta
     public function __construct( MetaInterface $meta )
     {
         $this->meta = $meta;
-    }
-
-    /**
-     * @param Collection $metas
-     *
-     * @return static[]
-     */
-    public static function fromCollection( Collection $metas ): array
-    {
-        return $metas->map( function ( MetaInterface $meta ) {
-            return new static( $meta );
-        } )->all();
     }
 
     /**

@@ -35,7 +35,27 @@ final class PostControllerTest extends GraphqlTestCase
 
         $this->post->save();
 
-        $this->post->addMeta( 'test_meta', 'test_value' );
+        $this->post->meta()->createMany( [
+            [
+                'meta_key'   => 'test_meta',
+                'meta_value' => 'test_value',
+            ],
+            [
+                'meta_key'   => 'test2',
+                'meta_value' => 'Test2',
+            ],
+        ] );
+
+        $this->post->addTerms( 'category', [
+            [
+                'name' => 'Test cat 1',
+                'slug' => 'test_cat_1',
+            ],
+            [
+                'name' => 'Test cat 2',
+                'slug' => 'test_cat_2',
+            ],
+        ] );
     }
 
     /**
@@ -44,7 +64,7 @@ final class PostControllerTest extends GraphqlTestCase
     public function testGetPost(): void
     {
         $query = <<<EOL
-            query Post(\$ID: ID!) {
+            query Post(\$ID: ID!, \$taxonomies: [String!]!) {
                 post(ID: \$ID) {
                     id,
                     title,
@@ -56,13 +76,21 @@ final class PostControllerTest extends GraphqlTestCase
                     meta {
                         key,
                         value
+                    },
+                    taxonomies(taxonomies: \$taxonomies) {
+                        taxonomy,
+                        term {
+                            name,
+                            slug
+                        }
                     }
                 }
             }
         EOL;
 
         $result = $this->handleQuery( $query, [
-            'ID' => $this->post->ID,
+            'ID'         => $this->post->ID,
+            'taxonomies' => [ 'category' ],
         ] );
 
         $this->assertArrayNotHasKey( 'errors', $result );
@@ -88,6 +116,14 @@ final class PostControllerTest extends GraphqlTestCase
             'key'   => 'test_meta',
             'value' => 'test_value',
         ], $data[ 'meta' ] );
+
+        $this->assertContains( [
+            'taxonomy' => 'category',
+            'term'     => [
+                'name' => 'Test cat 1',
+                'slug' => 'test_cat_1',
+            ],
+        ], $data[ 'taxonomies' ] );
     }
 
     /**
@@ -99,6 +135,9 @@ final class PostControllerTest extends GraphqlTestCase
         $this->assertEquals( $this->post->$key, $data[ $key ] );
     }
 
+    /**
+     * @throws BindingResolutionException
+     */
     public function testDeletePost(): void
     {
         $query = <<<EOL
