@@ -83,6 +83,8 @@ class Taxonomy extends BaseType
     }
 
     /**
+     * @Field()
+     *
      * @return Post[]
      */
     public function getPosts(): array
