@@ -14,7 +14,7 @@ use UnderScorer\ORM\Models\Term as TermModel;
  * Class Term
  * @package UnderScorer\GraphqlServer\Graphql\Types
  */
-class Term
+class Term extends BaseType
 {
 
     /**

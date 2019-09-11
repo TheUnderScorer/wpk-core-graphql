@@ -8,6 +8,7 @@ use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Right;
 use TheCodingMachine\GraphQLite\Annotations\Type;
 use TheCodingMachine\GraphQLite\Types\ID;
+use UnderScorer\ORM\Models\Post as PostModel;
 use UnderScorer\ORM\Models\User as UserModel;
 
 /**
@@ -16,7 +17,7 @@ use UnderScorer\ORM\Models\User as UserModel;
  * Class User
  * @package UnderScorer\Graphql\Graphql\Types
  */
-class User
+class User extends BaseType
 {
 
     /**
@@ -107,6 +108,18 @@ class User
         $meta = $this->user->meta;
 
         return Meta::fromCollection( $meta );
+    }
+
+    /**
+     * @Field()
+     *
+     * @return Post[]
+     */
+    public function getPosts(): array
+    {
+        $posts = PostModel::query()->author( $this->user->ID )->get();
+
+        return Post::fromCollection( $posts );
     }
 
 }

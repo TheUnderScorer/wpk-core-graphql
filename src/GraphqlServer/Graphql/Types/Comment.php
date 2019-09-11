@@ -2,7 +2,6 @@
 
 namespace UnderScorer\GraphqlServer\Graphql\Types;
 
-use DateTimeInterface;
 use TheCodingMachine\GraphQLite\Annotations\Field;
 use TheCodingMachine\GraphQLite\Annotations\Type;
 use TheCodingMachine\GraphQLite\Types\ID;
@@ -14,7 +13,7 @@ use UnderScorer\ORM\Models\Comment as CommentModel;
  * Class Comment
  * @package UnderScorer\GraphqlServer\Graphql\Types
  */
-class Comment
+class Comment extends BaseType
 {
 
     /**
