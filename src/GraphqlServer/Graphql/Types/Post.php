@@ -14,7 +14,7 @@ use UnderScorer\ORM\Models\Post as PostModel;
  * Class Post
  * @package UnderScorer\GraphqlServer\Graphql\Types
  */
-class Post
+class Post extends BaseType
 {
 
     /**
@@ -113,6 +113,20 @@ class Post
         $meta = $this->post->meta;
 
         return Meta::fromCollection( $meta );
+    }
+
+    /**
+     * @Field()
+     *
+     * @param string[] $taxonomies
+     *
+     * @return Taxonomy[]
+     */
+    public function getTaxonomies( array $taxonomies ): array
+    {
+        $tax = $this->post->taxonomy( $taxonomies );
+
+        return Taxonomy::fromCollection( $tax );
     }
 
 }
