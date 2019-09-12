@@ -85,6 +85,62 @@ class Post extends BaseType
     /**
      * @Field()
      *
+     * @return string|null
+     */
+    public function getThumbnail(): ?string
+    {
+        $thumbnail = $this->post->thumbnail;
+
+        if ( ! $thumbnail ) {
+            return null;
+        }
+
+        return $thumbnail ?
+            $thumbnail->meta_value :
+            null;
+    }
+
+    /**
+     * @Field()
+     *
+     * @return Post[]
+     */
+    public function getChildren(): array
+    {
+        $children = $this->post->children;
+
+        return $children ?
+            Post::fromCollection( $children ) :
+            [];
+    }
+
+    /**
+     * @Field()
+     *
+     * @return string
+     */
+    public function getStatus(): string
+    {
+        return $this->post->status;
+    }
+
+    /**
+     * @Field()
+     *
+     * @return Post|null
+     */
+    public function getParent(): ?Post
+    {
+        $parent = $this->post->parent;
+
+        return $parent ?
+            new Post( $parent ) :
+            null;
+    }
+
+    /**
+     * @Field()
+     *
      * @return string | null
      */
     public function getDate(): ?string
@@ -113,6 +169,41 @@ class Post extends BaseType
         $meta = $this->post->meta;
 
         return Meta::fromCollection( $meta );
+    }
+
+    /**
+     * @Field()
+     *
+     * @return string
+     */
+    public function getCommentStatus(): string
+    {
+        return $this->post->commentStatus;
+    }
+
+    /**
+     * @Field()
+     *
+     * @return string
+     */
+    public function getCommentCount(): string
+    {
+        return $this->post->commentCount;
+    }
+
+    /**
+     * @Field()
+     *
+     * @return Comment[]
+     */
+    public function getComments(): array
+    {
+        /** @var Collection $comments */
+        $comments = $this->post->comments;
+
+        return $comments ?
+            Comment::fromCollection( $comments ) :
+            [];
     }
 
     /**
