@@ -227,7 +227,7 @@ class Post extends BaseType
      */
     public function getCommentsOpen(): bool
     {
-        return comments_open( $this->post->ID );
+        return $this->post->commentStatus === 'open';
     }
 
 }
