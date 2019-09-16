@@ -1,7 +1,7 @@
 {
   "name": "the-under-scorer/wpk-core-graphql",
   "description": "Graphql extension for wpk-core",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "authors": [
     {
       "name": "Przemysław Żydek",

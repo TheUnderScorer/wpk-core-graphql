@@ -220,4 +220,14 @@ class Post extends BaseType
         return Taxonomy::fromCollection( $tax );
     }
 
+    /**
+     * @Field()
+     *
+     * @return bool
+     */
+    public function getCommentsOpen(): bool
+    {
+        return comments_open( $this->post->ID );
+    }
+
 }
