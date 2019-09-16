@@ -47,7 +47,7 @@ class Post extends BaseType
      *
      * @return string|null
      */
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->post->title;
     }
@@ -57,9 +57,9 @@ class Post extends BaseType
      *
      * @return User
      */
-    public function getAuthor(): User
+    public function getAuthor(): ?User
     {
-        return new User( $this->post->author );
+        return $this->post->author ? new User( $this->post->author ) : null;
     }
 
     /**
@@ -77,7 +77,7 @@ class Post extends BaseType
      *
      * @return string
      */
-    public function getContentFiltered(): string
+    public function getContentFiltered(): ?string
     {
         return apply_filters( 'the_content', $this->post->content );
     }
