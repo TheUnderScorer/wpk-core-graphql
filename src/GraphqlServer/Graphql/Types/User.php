@@ -122,4 +122,24 @@ class User extends BaseType
         return Post::fromCollection( $posts );
     }
 
+    /**
+     * @Field()
+     *
+     * @return string[]
+     */
+    public function getRoles(): array
+    {
+        return $this->user->roles;
+    }
+
+    /**
+     * @Field()
+     *
+     * @return string[]
+     */
+    public function getCapabilities(): array
+    {
+        return $this->user->capabilities;
+    }
+
 }
