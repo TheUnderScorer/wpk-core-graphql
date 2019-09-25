@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-  "content-hash": "d14a58cbf22a9b93befa4d10fd5e2d50",
+  "content-hash": "662985c4d306867d797fe7adf48d7dec",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2646,16 +2646,16 @@
         },
         {
             "name": "the-under-scorer/wp-eloquent",
-          "version": "1.4.6",
+          "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wp-eloquent.git",
-              "reference": "c86c55d2ae78105fd0b0b5324d5f7f17369c0019"
+              "reference": "82e9bd0cb468c7c694e49605c173b08450751892"
             },
             "dist": {
                 "type": "zip",
-              "url": "https://api.github.com/repos/TheUnderScorer/wp-eloquent/zipball/c86c55d2ae78105fd0b0b5324d5f7f17369c0019",
-              "reference": "c86c55d2ae78105fd0b0b5324d5f7f17369c0019",
+              "url": "https://api.github.com/repos/TheUnderScorer/wp-eloquent/zipball/82e9bd0cb468c7c694e49605c173b08450751892",
+              "reference": "82e9bd0cb468c7c694e49605c173b08450751892",
                 "shasum": ""
             },
             "require": {
@@ -2695,20 +2695,20 @@
                 "sql",
                 "wordpress"
             ],
-          "time": "2019-09-12T10:30:51+00:00"
+          "time": "2019-09-23T09:48:19+00:00"
         },
         {
             "name": "the-under-scorer/wpk-core",
-          "version": "1.5.7",
+          "version": "1.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheUnderScorer/wpk-core.git",
-              "reference": "362e062bb2f180a31e3e07c0ba7c01496fde53ef"
+              "reference": "5d7c0f4c98b95c695d20913c9e5724c3cf14a4ce"
             },
             "dist": {
                 "type": "zip",
-              "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/362e062bb2f180a31e3e07c0ba7c01496fde53ef",
-              "reference": "362e062bb2f180a31e3e07c0ba7c01496fde53ef",
+              "url": "https://api.github.com/repos/TheUnderScorer/wpk-core/zipball/5d7c0f4c98b95c695d20913c9e5724c3cf14a4ce",
+              "reference": "5d7c0f4c98b95c695d20913c9e5724c3cf14a4ce",
                 "shasum": ""
             },
             "require": {
@@ -2743,7 +2743,7 @@
                     "email": "przemyslawzydek@gmail.com"
                 }
             ],
-          "time": "2019-09-07T14:35:42+00:00"
+          "time": "2019-09-19T07:05:32+00:00"
         },
         {
             "name": "thecodingmachine/class-explorer",
@@ -2869,16 +2869,16 @@
         },
         {
             "name": "typerocket/core",
-            "version": "v4.0.44",
+          "version": "v4.0.50",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TypeRocket/core.git",
-                "reference": "7c824c9106e8934d8b9fdf012cd6ef941655d54e"
+              "reference": "45c53855f12a99537265c8eae0a3ec46325cf44a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TypeRocket/core/zipball/7c824c9106e8934d8b9fdf012cd6ef941655d54e",
-                "reference": "7c824c9106e8934d8b9fdf012cd6ef941655d54e",
+              "url": "https://api.github.com/repos/TypeRocket/core/zipball/45c53855f12a99537265c8eae0a3ec46325cf44a",
+              "reference": "45c53855f12a99537265c8eae0a3ec46325cf44a",
                 "shasum": ""
             },
             "require": {
@@ -2905,8 +2905,8 @@
             "authors": [
                 {
                     "name": "Kevin Dees",
-                    "role": "Creator",
-                    "homepage": "https://kevdees.com"
+                  "homepage": "https://kevdees.com",
+                  "role": "Creator"
                 }
             ],
             "description": "The TypeRocket WordPress Framework.",
@@ -2916,7 +2916,7 @@
                 "typerocket",
                 "wordpress"
             ],
-            "time": "2019-08-27T18:42:40+00:00"
+          "time": "2019-09-25T00:22:09+00:00"
         },
         {
             "name": "typerocket/plugin-builder",
@@ -3130,16 +3130,16 @@
         },
         {
             "name": "typerocket/typerocket",
-            "version": "v4.0.12",
+          "version": "v4.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TypeRocket/typerocket.git",
-                "reference": "f95a7f585fa0b7f61f971bdcdecce4e6b628a5ad"
+              "reference": "42093ed3cf2cadc9612c0140cda8fa6a6d8b2f8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TypeRocket/typerocket/zipball/f95a7f585fa0b7f61f971bdcdecce4e6b628a5ad",
-                "reference": "f95a7f585fa0b7f61f971bdcdecce4e6b628a5ad",
+              "url": "https://api.github.com/repos/TypeRocket/typerocket/zipball/42093ed3cf2cadc9612c0140cda8fa6a6d8b2f8c",
+              "reference": "42093ed3cf2cadc9612c0140cda8fa6a6d8b2f8c",
                 "shasum": ""
             },
             "require": {
@@ -3164,8 +3164,8 @@
             "authors": [
                 {
                     "name": "Kevin Dees",
-                    "role": "Creator",
-                    "homepage": "https://kevdees.com"
+                  "homepage": "https://kevdees.com",
+                  "role": "Creator"
                 }
             ],
             "description": "TypeRocket for WordPress.",
@@ -3175,7 +3175,7 @@
                 "typerocket",
                 "wordpress"
             ],
-            "time": "2019-08-13T17:55:46+00:00"
+          "time": "2019-09-23T13:56:13+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3812,16 +3812,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "3.1.0",
+          "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "e899757bb3df5ff6e95089132f32cd59aac2220a"
+              "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e899757bb3df5ff6e95089132f32cd59aac2220a",
-                "reference": "e899757bb3df5ff6e95089132f32cd59aac2220a",
+              "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/995192df77f63a59e47f025390d2d1fdf8f425ff",
+              "reference": "995192df77f63a59e47f025390d2d1fdf8f425ff",
                 "shasum": ""
             },
             "require": {
@@ -3857,7 +3857,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2019-07-25T05:29:42+00:00"
+          "time": "2019-09-17T06:23:10+00:00"
         },
         {
             "name": "phpunit/phpunit",

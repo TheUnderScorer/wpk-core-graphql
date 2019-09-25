@@ -37,7 +37,9 @@ class Meta extends BaseType
      */
     public function getValue(): string
     {
-        return (string) $this->meta->getMetaValue();
+        $value = $this->meta->getMetaValue();
+
+        return is_array( $value ) || is_object( $value ) ? json_encode( $value ) : (string) $value;
     }
 
     /**
