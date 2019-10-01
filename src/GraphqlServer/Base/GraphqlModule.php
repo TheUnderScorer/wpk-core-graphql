@@ -41,9 +41,7 @@ abstract class GraphqlModule extends Module
     private function loadGraphqlControllers(): self
     {
         foreach ( $this->graphqlControllers as $graphqlController ) {
-            $this->app->singleton( $graphqlController, function () use ( $graphqlController ) {
-                return new $graphqlController( $this->app );
-            } );
+            $this->app->singleton( $graphqlController );
         }
 
         return $this;
