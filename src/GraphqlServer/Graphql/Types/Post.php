@@ -95,9 +95,7 @@ class Post extends BaseType
             return null;
         }
 
-        return $thumbnail ?
-            $thumbnail->meta_value :
-            null;
+        return wp_get_attachment_url( $thumbnail->meta_value );
     }
 
     /**
