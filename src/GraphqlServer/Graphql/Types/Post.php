@@ -228,4 +228,14 @@ class Post extends BaseType
         return $this->post->commentStatus === 'open';
     }
 
+    /**
+     * @Field()
+     *
+     * @return string
+     */
+    public function getPermalink(): string
+    {
+        return get_permalink( $this->post->ID );
+    }
+
 }
