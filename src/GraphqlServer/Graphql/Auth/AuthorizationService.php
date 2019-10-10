@@ -15,10 +15,11 @@ class AuthorizationService implements AuthorizationServiceInterface
      * Returns true if the "current" user has access to the right "$right"
      *
      * @param string $right
+     * @param null   $subject
      *
      * @return bool
      */
-    public function isAllowed( string $right ): bool
+    public function isAllowed( string $right, $subject = null ): bool
     {
         if ( ! is_user_logged_in() ) {
             return false;
